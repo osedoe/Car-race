@@ -10,33 +10,30 @@
 </head>
 
 <body>
-    <div class="outter-container">
-        <h1>Los corredores locos</h1>
-        <div class="container container1">
-            <div class="batmovil-wrapper" id="batmovil-wrapper">
-                <p class="track1" id="track1"></p>
-                <img src="./img/batmovil.png" alt="batmovil" id="batmovil" class="batmovil car">
-            </div>
-            <div class="car-wrapper batmovil">
 
+    <div class="game-board">
+        <div class="title-container">
+            <h1>Los corredores locos</h1>
+            <h3>Turno: <span id="turn">0</span></h3>
+        </div>
+        <div class="outter-container">
+            <div class="container container1">
+                <div class="track" id="track1"></div>
+                <img src="./img/batmovil.png" alt="batmovil" id="batmovil" class="car">
+            </div>
+            <div class="container container2">
+                <div class="track" id="track2"></div>
+                <img src="./img/miura.png" alt="miura" id="miura" class="car">
+            </div>
+            <div class="container container3">
+                <div class="track" id="track3"></div>
+                <img src="./img/600.png" alt="600" id="600" class="car">
             </div>
         </div>
-        <!-- <div class="container container2">
-            <div class="track track2"></div>
-            <div class="car-wrapper miura">
-                <img src="./img/miura.png" alt="Miura">
-            </div>
-        </div>
-        <div class="container container2">
-            <div class="track track2"></div>
-            <div class="car-wrapper 600">
-                <img src="./img/600.png" alt="600">
-            </div>
-        </div> -->
         <button id="start">Comenzar</button>
     </div>
 
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 
 </body>
 

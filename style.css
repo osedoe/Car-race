@@ -1,14 +1,23 @@
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container {
+    text-align: center;
+}
+
 .outter-container {
     background-color: antiquewhite;
+    border: 2px solid black;
+    margin: 1em;
     padding: 1em;
+    width: 90vw;
 }
 
-.container1 {
+.container {
     border-bottom: 2px solid black;
-    position: relative;
-}
-
-.batmovil-wrapper {
-    top: 0;
-    left: 0;
+    padding-top: 1.5em;
 }
