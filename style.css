@@ -1,0 +1,14 @@
+.outter-container {
+    background-color: antiquewhite;
+    padding: 1em;
+}
+
+.container1 {
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+.batmovil-wrapper {
+    top: 0;
+    left: 0;
+}
