@@ -124,26 +124,21 @@ let turnNumber = 0;
 // Event listener to start the game triggered by the button
 start.addEventListener("click", () => startGame());
 
-//&nbsp
-
-
 /**
  * Main
  */
 function startGame() {
-
     // First we are going to write down the turn we are in the page
-
-    /**  Call the function that generates a random number
-     * so we can pass the value returned into the Class method that makes
-     * the cars move 
-     */
-    // while (batm._position < 200 || miura._position < 200 || six._position < 200) {
-    countTurn();
-    turnRoll();
-    // }
-
-
+    // And roll the dice so we know how far is going each car
+    let divWidth = document.getElementById('race').offsetWidth;
+    do {
+        countTurn();
+        turnRoll();
+        console.log(batm._position);
+        console.log(miura._position);
+        console.log(six._position);
+    }
+    while (batm._position < divWidth || miura._position < divWidth || six._position < divWidth);
 }
 
 function countTurn() {
@@ -151,15 +146,23 @@ function countTurn() {
     turnSpan.textContent = turnNumber;
 }
 
+function setPositionInTrack(pos) {
+    if (pos < 0) {
+        pos = 0;
+    }
+}
 
 function turnRoll() {
     let value = getRandomNumber(1, 100);
-    console.log("====");
+
     batm.position += batm.moveCar(value);
-    console.log(batm._position);
+    car1.style.transform = 'translateX(' + batm._position + 'px)';
+
     miura.position += miura.moveCar(value);
-    console.log(miura._position);
+    car2.style.transform = 'translateX(' + miura._position + 'px)';
+
     six.position += six.moveCar(value);
-    console.log(six._position);
+    car3.style.transform = 'translateX(' + six._position + 'px)';
+
 
 }

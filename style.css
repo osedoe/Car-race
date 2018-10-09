@@ -14,10 +14,15 @@
     border: 2px solid black;
     margin: 1em;
     padding: 1em;
-    width: 90vw;
+    width: 900px;
 }
 
 .container {
     border-bottom: 2px solid black;
     padding-top: 1.5em;
+}
+
+img {
+    transition-duration: 1s;
+    transition-delay: .2s
 }
