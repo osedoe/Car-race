@@ -14,23 +14,24 @@
     <div class="game-board">
         <div class="title-container">
             <h1>Los coches locos</h1>
-            <h3>Turno: <span id="turn">0</span></h3>
+            <h3>Turno/s: <span id="turn">0</span></h3>
         </div>
         <div id="race" class="outter-container">
             <div class="container container1">
-                <div class="track" id="track1"></div>
                 <img src="./img/batmovil.png" alt="batmovil" id="batmovil" class="car">
             </div>
             <div class="container container2">
-                <div class="track" id="track2"></div>
                 <img src="./img/miura.png" alt="miura" id="miura" class="car">
             </div>
             <div class="container container3">
-                <div class="track" id="track3"></div>
                 <img src="./img/600.png" alt="600" id="600" class="car">
             </div>
         </div>
-        <button id="start">Comenzar</button>
+        <div class="btn-container">
+            <button id="start">Comenzar</button>
+            <button id="reset">Reiniciar</button>
+        </div>
+
     </div>
 
     <script defer src="main.js"></script>

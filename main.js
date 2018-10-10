@@ -103,66 +103,94 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 // ========================= //
 
 // Save variables that we are going to use
+const END = 800;
+
 const start = document.getElementById("start");
-let turnSpan = document.getElementById("turn");
+const reset = document.querySelector("#reset");
+const cars = document.querySelectorAll("img");
 
-const car1 = document.getElementById("batmovil");
-const car2 = document.getElementById("miura");
-const car3 = document.getElementById("600");
+let turnSpan = document.querySelector("#turn");
+let turnNumber = 0;
 
-const track1 = document.getElementById("track1");
-const track2 = document.getElementById("track2");
-const track3 = document.getElementById("track3");
-
+// Create instances of car
 const batm = new Coche("batmovil", 0, 2, 0, 75, 25);
 const miura = new Coche("miura", 0, 4, 1, 50, 50);
 const six = new Coche("600", 0, 6, 0, 25, 75);
 
-let turnNumber = 0;
+// Function declarations
+const whoWins = () => [batm, miura, six]
+    .sort((a, b) => b._position - a._position)
+    .map(car => car._model);
 
-
-// Event listener to start the game triggered by the button
-start.addEventListener("click", () => startGame());
-
-/**
- * Main
- */
-function startGame() {
-    // First we are going to write down the turn we are in the page
-    // And roll the dice so we know how far is going each car
-    let divWidth = document.getElementById('race').offsetWidth;
-    do {
-        countTurn();
-        turnRoll();
-        console.log(batm._position);
-        console.log(miura._position);
-        console.log(six._position);
+const podium = car => {
+    if (car.position >= END) {
+        return car;
     }
-    while (batm._position < divWidth || miura._position < divWidth || six._position < divWidth);
-}
+};
 
-function countTurn() {
+const countTurn = () => {
     turnNumber += 1;
     turnSpan.textContent = turnNumber;
-}
+};
 
-function setPositionInTrack(pos) {
-    if (pos < 0) {
-        pos = 0;
-    }
-}
+const setPositionInTrack = pos => {
+    if (pos < 0) pos = 0;
+};
 
-function turnRoll() {
+const turnRoll = () => {
+    let podiumPosition = [];
     let value = getRandomNumber(1, 100);
 
     batm.position += batm.moveCar(value);
-    car1.style.transform = 'translateX(' + batm._position + 'px)';
+    cars[0].style.transform = "translateX(" + batm._position + "px)";
+    podium(batm);
 
     miura.position += miura.moveCar(value);
-    car2.style.transform = 'translateX(' + miura._position + 'px)';
+    cars[1].style.transform = "translateX(" + miura._position + "px)";
+    podium(miura);
 
     six.position += six.moveCar(value);
-    car3.style.transform = 'translateX(' + six._position + 'px)';
+    cars[2].style.transform = "translateX(" + six._position + "px)";
+    podium(six);
+};
 
-
+const resetTrigger = () => {
+    cars.forEach((car) => {
+        car._position = 0;
+    });
 }
+
+// ========== Main ========= //
+
+const startGame = () => {
+    /**
+     * First we are going to write down the turn we are in the page.  * * And roll the dice so we know how far is going each car
+     */
+    do {
+        countTurn();
+        turnRoll();
+    } while (
+        batm._position < END ||
+        miura._position < END ||
+        six._position < END
+    );
+
+    /**
+     * Find out who wins the race
+     */
+    setTimeout(() => {
+        let resultArr = whoWins();
+        let resultStr =
+            `== Resultado ==
+
+    1. ${resultArr[0]} \n
+    2. ${resultArr[1]} \n
+    3. ${resultArr[2]}`
+        alert(resultStr);
+    }, 6500);
+
+};
+
+// Event listener to start the game triggered by the button
+start.addEventListener("click", () => startGame());
+reset.addEventListener("click", () => resetTrigger());
