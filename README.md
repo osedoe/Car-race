@@ -25,13 +25,13 @@ La carrera terminará cuando el último contendiente llegue a meta, momento en e
 
 El tiempo transcurrido entre un turno y otro vendrá determinado por una función sleep, que tendremos que desarrollar, y cuyo pseudocódigo es el siguiente:
 
-´´´´javascript
+```javascript
 función esperar(milisegundos) {
    fecha_de_referencia = Sistema.fecha_actual();
    while (Sistema.fecha_actual() < fecha_de_referencia + milisegundos) {
    }
 }
-´´´
+```
 
 Requisitos de entrega:
 
