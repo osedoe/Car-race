@@ -10,11 +10,16 @@
 </head>
 
 <body>
-
     <div class="game-board">
         <div class="title-container">
             <h1>Los coches locos</h1>
             <h3>Turno/s: <span id="turn">0</span></h3>
+
+        </div>
+        <div class="redlight">
+            <div class="redlight-item red"></div>
+            <div class="redlight-item yellow"></div>
+            <div class="redlight-item green"></div>
         </div>
         <div id="race" class="outter-container">
             <div class="container container1">
@@ -29,13 +34,9 @@
         </div>
         <div class="btn-container">
             <button id="start">Comenzar</button>
-            <button id="reset">Reiniciar</button>
         </div>
-
     </div>
-
     <script defer src="main.js"></script>
-
 </body>
 
 </html>

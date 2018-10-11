@@ -1,5 +1,5 @@
 body {
-    background: lightcoral;
+    background: #CCCCCC;
     font-family: monospace;
     font-size: 1.3em;
 }
@@ -29,8 +29,8 @@ button {
     background: linear-gradient(to right, lightgoldenrodyellow 95%, rgba(0, 0, 0, 0));
     border: 6px solid black;
     border-right: none;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     margin: 1em;
     padding: 1em;
     width: 900px;
@@ -45,4 +45,39 @@ img {
     transition-timing-function: ease-in;
     transition-duration: 6s;
     transition-delay: 0.2s;
+}
+
+.redlight {
+    background-color: black;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    height: 150px;
+    width: 50px;
+}
+
+.red {
+    background-color: red;
+    border-radius: 50%;
+    height: 40px;
+    margin: auto;
+    width: 40px;
+}
+
+.yellow {
+    background-color: grey;
+    border-radius: 50%;
+    height: 40px;
+    margin: auto;
+    width: 40px;
+}
+
+.green {
+    background-color: grey;
+    border-radius: 50%;
+    height: 40px;
+    margin: auto;
+    width: 40px;
 }
