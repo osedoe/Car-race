@@ -7,18 +7,18 @@ La representación la realizaremos mediante la impresión por pantalla de la ima
 En el caso de que un contendiente tenga como hándicap el retroceso, éste no podrá hacerle retroceder más allá de la línea de meta.
 La tabla de ventajas y hándicaps se muestra a continuación:
 
-CONTENDIENTE
-VENTAJA
-HÁNDICAP
-Contendiente 1
-2 (75%)
-0 (25%)
-Contendiente 2
-4 (50%)
--1 (50%)
-Contendiente 3
-6 (25%)
-0 (75%)
+CONTENDIENTE  
+VENTAJA  
+HÁNDICAP  
+Contendiente 1  
+2 (75%)  
+0 (25%)  
+Contendiente 2  
+4 (50%)  
+-1 (50%)  
+Contendiente 3  
+6 (25%)  
+0 (75%)  
 
 Todos los contendientes participarán en el mismo turno. Cada turno vendrá indicado justo encima de donde se represente la carrera. A su vez, cada turno se representará debajo del anterior.
 La carrera terminará cuando el último contendiente llegue a meta, momento en el que se imprimirá por pantalla el pódium resultante.
